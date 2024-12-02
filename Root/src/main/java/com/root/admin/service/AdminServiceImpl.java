@@ -68,4 +68,13 @@ public class AdminServiceImpl implements AdminService {
 	        return null;
 	}
 
+	@Override
+	public void deleteProduct(Long productId) {
+		
+		 Optional<Product> theProduct = adminRepository.findById(productId);
+		 if (theProduct.isPresent()) {
+			 adminRepository.deleteById(productId);
+		 }
+	}
+
 }

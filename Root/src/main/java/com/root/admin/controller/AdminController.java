@@ -10,6 +10,7 @@ import javax.sql.rowset.serial.SerialException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -83,4 +84,15 @@ public class AdminController {
 		adminService.updateProduct(productId,name, category, Price, photoBytes);
 		return ResponseEntity.ok("Product updated successfully!");
 	}
+	 
+	 /**  API Endpoint to delete the product.
+	  * @author yreddys
+	  * @param productId
+	  * @return
+	  */
+	 @DeleteMapping("/delete/product/{productId}")
+	 ResponseEntity<?> deleteProduct(@PathVariable Long productId){
+		 adminService.deleteProduct(productId);
+		 return ResponseEntity.ok("Product deleted successfully!");
+	 }
 }

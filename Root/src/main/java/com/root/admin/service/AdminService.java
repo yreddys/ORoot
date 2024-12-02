@@ -20,4 +20,6 @@ public interface AdminService {
 
 	byte[] getRoomPhotoByRoomId(Long productId) throws ResourceNotFoundException, SQLException;
 
+	void deleteProduct(Long productId);
+
 }
