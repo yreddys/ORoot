@@ -3,6 +3,7 @@ package com.root.admin.service;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.sql.rowset.serial.SerialException;
 
@@ -21,5 +22,7 @@ public interface AdminService {
 	byte[] getRoomPhotoByRoomId(Long productId) throws ResourceNotFoundException, SQLException;
 
 	void deleteProduct(Long productId);
+
+	List<Product> getAllProducts();
 
 }
