@@ -17,12 +17,12 @@ import org.springframework.web.multipart.MultipartFile;
 import com.root.admin.entity.Product;
 import com.root.admin.exception.InternalServerException;
 import com.root.admin.exception.ResourceNotFoundException;
-import com.root.admin.repository.AdminRepository;
+import com.root.admin.repository.ProductRepository;
 
 @Service
 public class AdminServiceImpl implements AdminService {
 	@Autowired
-	private AdminRepository adminRepository;
+	private ProductRepository adminRepository;
 
 	@Override
 	public Product createProduct(String name, String category, BigDecimal price, MultipartFile file)
