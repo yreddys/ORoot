@@ -3,6 +3,9 @@ package com.root.admin.entity;
 import java.math.BigDecimal;
 import java.sql.Blob;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.root.admin.service.BlobToBase64Serializer;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,6 +29,7 @@ public class Product {
 	private BigDecimal price;
 	// private boolean isAvailable = true;
 	@Lob
+	@JsonSerialize(using = BlobToBase64Serializer.class)
 	private Blob photo;
 
 }
